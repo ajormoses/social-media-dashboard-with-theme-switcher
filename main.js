@@ -1,17 +1,23 @@
 // Themes
 const dark_theme = document.querySelector(".dark-btn");
 const light_theme = document.querySelector(".light-btn");
+const toggle = document.querySelector(".toggle-icon");
+const mode = document.querySelector(".toggle-txt");
 
-light_theme.addEventListener("click", () => {
-  dark_theme.style.opacity = "0";
-  light_theme.style.opacity = "1";
-  document.body.classList.add("light-theme");
-});
-
-dark_theme.addEventListener("click", () => {
-  dark_theme.style.opacity = "1";
-  light_theme.style.opacity = "0";
-  document.body.classList.remove("light-theme");
+toggle.addEventListener("click", () => {
+  if (dark_theme.style.opacity == 1) {
+    dark_theme.style.opacity = "0";
+    light_theme.style.opacity = "1";
+    light_theme.style.transition = "0.3s";
+    mode.innerText = "Light Mode";
+    document.body.classList.add("light-theme");
+  } else {
+    dark_theme.style.opacity = "1";
+    dark_theme.style.transition = "0.3s";
+    light_theme.style.opacity = "0";
+    mode.innerText = "Dark Mode";
+    document.body.classList.remove("light-theme");
+  }
 });
 
 // counter
