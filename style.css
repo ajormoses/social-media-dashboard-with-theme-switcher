@@ -151,9 +151,16 @@ article:hover {
 }
 
 .instagram-article {
-  border-image: var(--Instagram);
-  border-top: 0.3rem solid transparent;
-  border-image-slice: 1;
+  position: relative;
+  overflow-y: hidden;
+}
+
+.insta {
+  background: var(--Instagram);
+  height: 0.25rem;
+  position: absolute;
+  top: 0rem;
+  width: 100%;
 }
 
 .youtube-article {
