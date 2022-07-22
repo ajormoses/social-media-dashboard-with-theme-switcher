@@ -1,0 +1,341 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  --BG: hsl(230, 17%, 14%);
+  --Top-BG-Pattern: hsl(232, 19%, 15%);
+  --Card-BG: hsl(228, 28%, 20%);
+  --Desaturated-Blue-Text: hsl(228, 34%, 66%);
+  --White-Text: hsl(0, 0%, 100%);
+  --Toggle: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+
+  /* Dark theme */
+
+  --Lime-Green: hsl(163, 72%, 41%);
+  --Bright-Red: hsl(356, 69%, 56%);
+  --Facebook: hsl(208, 92%, 53%);
+  --Twitter: hsl(203, 89%, 53%);
+  --Instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  --YouTube: hsl(348, 97%, 39%);
+}
+
+.light-theme {
+  --BG: hsl(0, 0%, 100%);
+  --Top-BG-Pattern: hsl(225, 100%, 98%);
+  --Card-BG: hsl(227, 47%, 96%);
+  --Desaturated-Blue-Text: hsl(228, 12%, 44%);
+  --White-Text: hsl(230, 17%, 14%);
+  --Toggle: hsl(230, 22%, 74%);
+}
+
+.container {
+  width: 85%;
+  margin: auto;
+}
+
+body {
+  background: var(--BG);
+}
+
+header {
+  padding: 2rem 0 4rem;
+  background: var(--Top-BG-Pattern);
+  border-radius: 0 0 1.5rem 1.5rem;
+  animation: appear 1s ease 2s forwards;
+  opacity: 0;
+}
+
+.first-section {
+  animation: appear 1s ease 2.5s forwards;
+  opacity: 0;
+}
+
+.second-article {
+  padding: 1.2rem 1.3rem;
+  margin: 0 0 1rem;
+}
+
+.second-section {
+  animation: appear 1s ease 3.5s forwards;
+  opacity: 0;
+}
+
+@keyframes appear {
+  0% {
+    transform: translateY(2rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0px);
+    opacity: 1;
+  }
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: var(--White-Text);
+  padding-bottom: 0.2rem;
+}
+
+header p {
+  font-size: 0.9rem;
+  color: gray;
+  font-weight: 700;
+}
+
+hr {
+  margin: 1.3rem 0;
+  border: 1px solid gray;
+}
+
+.toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+}
+
+.toggle-icon {
+  padding: 0.2rem;
+  background: var(--Toggle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 1.1rem;
+}
+
+.dark-btn {
+  background: var(--BG);
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 50%;
+}
+
+.light-btn {
+  background: var(--BG);
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 50%;
+  margin-left: 0.2rem;
+  margin-right: 0.1rem;
+  opacity: 0;
+}
+
+article {
+  background: var(--Card-BG);
+  text-align: center;
+  padding: 2rem 0;
+  border-radius: 0.4rem;
+  margin: -2rem 0 3rem;
+}
+
+article:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 0.5rem var(--Toggle);
+}
+
+.fb-article {
+  border-top: 0.3rem solid var(--Facebook);
+}
+
+.twitter-article {
+  border-top: 0.3rem solid var(--Twitter);
+}
+
+.instagram-article {
+  border-image: var(--Instagram);
+  border-top: 0.3rem solid transparent;
+  border-image-slice: 1;
+}
+
+.youtube-article {
+  border-top: 0.3rem solid var(--YouTube);
+}
+
+.fb,
+.twitter,
+.instagram,
+.youtube {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 0.5rem;
+}
+
+.fb p,
+.twitter p,
+.instagram p,
+.youtube p {
+  padding: 0 0.5rem 0.3rem;
+  color: var(--Desaturated-Blue-Text);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+article h1 {
+  font-size: 4rem;
+  color: var(--White-Text);
+}
+
+.follower {
+  letter-spacing: 0.3rem;
+  font-size: 1rem;
+  color: var(--Desaturated-Blue-Text);
+  padding-bottom: 2rem;
+  font-weight: 700;
+}
+
+.fb-today,
+.twitter-today,
+.instagram-today,
+.youtube-today {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fb-today p,
+.twitter-today p,
+.instagram-today p {
+  padding: 0.5rem 0.5rem 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.youtube-today p {
+  padding-left: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.fb-today p {
+  color: var(--White-Text);
+  font-weight: 700;
+}
+
+.youtube-today p {
+  color: var(--Bright-Red);
+  font-weight: 700;
+}
+
+.instagram-today p,
+.twitter-today p {
+  color: var(--Lime-Green);
+  font-weight: 700;
+}
+
+.youtube-arrow {
+  transform: rotate(180deg);
+  margin-top: 0.5rem;
+}
+
+.overview {
+  background: none;
+  margin-bottom: 2.5rem;
+  color: var(--White-Text);
+  animation: appear 1s ease 3s forwards;
+  opacity: 0;
+}
+
+.first-line,
+.second-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.first-line {
+  padding-bottom: 1.3rem;
+}
+
+.first-line p {
+  padding-bottom: 0.3rem;
+  color: var(--Desaturated-Blue-Text);
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.second-line h2 {
+  color: var(--White-Text);
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.percent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.5rem;
+}
+
+.percent p {
+  padding: 0.5rem 0 0 0.3rem;
+  color: var(--Lime-Green);
+  font-weight: 700;
+}
+
+.fb-arrow-red,
+.youtube-arrow-down {
+  transform: rotate(180deg);
+  margin-top: 1rem;
+}
+
+.fb-red p,
+.youtube-percent p {
+  color: var(--Bright-Red);
+  font-weight: 700;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: var(--White-Text);
+  padding-top: 1rem;
+  animation: appear 1s ease 4s forwards;
+  opacity: 0;
+}
+
+.attribution a {
+  color: var(--Desaturated-Blue-Text);
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 62rem) {
+  .header-wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  hr {
+    display: none;
+  }
+
+  .toggle-icon {
+    margin-left: 0.8rem;
+  }
+
+  .first-section,
+  .second-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .second-article {
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 100rem) {
+  .container {
+    width: 100rem;
+  }
+}
